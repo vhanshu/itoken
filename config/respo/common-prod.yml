@@ -1,0 +1,26 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://192.168.244.132:8084
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  zipkin:
+    base-url: http://192.168.244.132:9411
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://192.168.244.132:8761/eureka/,http://192.168.244.132:8861/eureka/,http://192.168.244.132:8961/eureka/

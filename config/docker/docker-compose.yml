@@ -1,0 +1,13 @@
+version: '3'
+services:
+  config:
+    restart: always
+    image: 192.168.244.130:5000/config
+    container_name: config
+    ports:
+      - 8777:8777
+    networks:
+      - config_network
+networks:
+  config_network:
+

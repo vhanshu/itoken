@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: service-upload
+  thymeleaf:
+    cache: false # 开发时关闭缓存,不然没法看到实时页面
+    mode: LEGACYHTML5 # 用非严格的 HTML
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    servlet:
+      content-type: text/html
+
+server:
+  port: 8304
+
+fdfs:
+  # 读取时间
+  so-timeout: 1500
+  # 连接超时时间
+  connect-timeout: 600
+  # 缩略图
+  thumb-image:
+    width: 150
+    height: 150
+  # Tracker服务，确保tracker storage nginx已经启动
+  tracker-list:
+    - 192.168.244.130:22122

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>u2登录</title>
+
+    <link rel="stylesheet" th:href="@{{static_admin}/lwlogin/css/login.css(static_admin=${static_admin})}"/>
+    <link rel="stylesheet" th:href="@{{static_admin}/lwlogin/css/shuffling.css(static_admin=${static_admin})}"/>
+    <script type="text/javascript" th:src="@{{static_admin}/lwlogin/js/focus.js(static_admin=${static_admin})}"></script>
+</head>
+<body>
+<script th:src="@{{static_admin}/lwlogin/js/jquery-1.11.1.min.js(static_admin=${static_admin})}"></script>
+<div class="box">
+    <div class="left" style="padding-top:5px;">
+        <a href="#"><img th:src="@{{static_admin}/lwlogin/static/icon/jwc_jxxy_logo.png(static_admin=${static_admin})}" class="iconstring"></a>
+        <strong class="string">u2购物系统</strong>
+
+        <div class="shop_bd_top_center">
+            <div class="shop_bd_img"><img th:src="@{{static_admin}/lwlogin/static/tupian/tupian1.jpg(static_admin=${static_admin})}" width="100%"
+                                          height="420px"
+                                          alt="用心打造u2购物系统"/>
+                <h2><a href="#">用心打造u2购物系统</a></h2>
+            </div>
+            <div class="shop_bd_img"><img th:src="@{{static_admin}/lwlogin/static/tupian/tupian2.jpg(static_admin=${static_admin})}" width="100%"
+                                          height="420px"
+                                          alt="不断升华u2购物系统"/>
+                <h2><a href="#">不断升华u2购物系统</a></h2>
+            </div>
+            <div class="shop_bd_img"><img th:src="@{{static_admin}/lwlogin/static/tupian/tupian3.jpg(static_admin=${static_admin})}" width="100%"
+                                          height="420px"
+                                          alt="做到精美细致华丽"/>
+                <h2><a href="#">做到精美细致华丽</a></h2>
+            </div>
+            <div class="shop_bd_img"><img th:src="@{{static_admin}/lwlogin/static/tupian/tupian4.jpg(static_admin=${static_admin})}" width="100%"
+                                          height="420px"
+                                          alt="不要犹豫马上打造"/>
+                <h2><a href="#">不要犹豫马上打造</a></h2>
+            </div>
+            <div class="shop_bd_img"><img th:src="@{{static_admin}/lwlogin/static/tupian/tupian5.jpg(static_admin=${static_admin})}" width="100%"
+                                          height="420px"
+                                          alt="愉悦渗透你的身心"/>
+                <h2><a href="#">愉悦渗透你的身心</a></h2>
+            </div>
+            <div class="shop_bd_left">&lt;</div>
+            <div class="shop_bd_right">&gt;</div>
+            <div class="shop_bd_yuand">
+                <ul>
+                    <li class="bottom_en"></li>
+                    <li class="bottom_en"></li>
+                    <li class="bottom_en"></li>
+                    <li class="bottom_en"></li>
+                    <li class="bottom_en"></li>
+                </ul>
+            </div>
+            <script type="text/javascript">
+                actionLP();
+            </script>
+        </div>
+
+    </div>
+    <div class="right">
+        <p class="help"><a href="#">问题反馈</a>&emsp;&emsp;<a href="#">帮助中心</a></p>
+        <div class="select">
+            <select id="dist">
+                <option value="简体中文">简体中文</option>
+                <option value="English">English</option>
+                <option value="日语">日语</option>
+                <option value="俄语">俄语</option>
+                </option>
+            </select>
+        </div>
+        <div class="thebox">
+            <th:block th:if="${sysUser != null}">
+                <p>欢迎<span th:text="${sysUser.userName}"></span>回来!</p>
+            </th:block>
+            <th:block th:if="${sysUser == null}">
+                <form action="/login.p" method="post">
+                    <h1>账号登陆</h1>
+                    <div th:if="${message} != null">
+                        <span th:text="${message}"></span>
+                    </div>
+                    <input type="hidden" name="url" th:value="${url}">
+                    <p><img th:src="@{{static_admin}/lwlogin/static/icon/用户.png(static_admin=${static_admin})}" class="iconinput">
+                        <input type="text" required="required" placeholder="用户名" name="userName" id="username"/>
+                    </p>
+                    <p><img th:src="@{{static_admin}/lwlogin/static/icon/密码.png(static_admin=${static_admin})}" class="iconinput">
+                        <input type="password" required="required" placeholder="密码" name="password" id="password"/></p>
+
+                    <div class="ragiobox">
+                        <input type="checkbox" name="choose" value="记住用户">记住用户
+
+                        <input type="checkbox" name="choose" value="SSL安全登陆">SSL安全登陆
+                    </div>
+                    <input class="but" type="submit"/>
+                </form>
+                <a href="#" style="margin-left: 15px;">忘记密码</a>
+                &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+                <a href="#" style="margin-left: 15px;">去注册</a>
+            </th:block>
+        </div>
+    </div>
+    <p class="last">嘉兴学院信息化工作办公室©<span th:text="${year}">2018</span>-<span th:text="${year}+1">2019</span></p>
+</div>
+</body>
+</html>

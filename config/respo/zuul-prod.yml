@@ -1,0 +1,20 @@
+server:
+  port: 8769
+
+spring:
+  application:
+    name: zuul
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: vhans
+    password: luowei4628@()
+
+zuul:
+  routes:
+    api-a:
+      path: /api-a/**
+      serviceId: admin
+    api-b:
+      path: /api-b/**
+      serviceId: admin

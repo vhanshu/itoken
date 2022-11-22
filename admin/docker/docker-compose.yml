@@ -1,0 +1,13 @@
+version: '3'
+services:
+  admin:
+    restart: always
+    image: 192.168.244.130:5000/admin
+    container_name: admin
+    ports:
+      - 8084:8084
+    networks:
+      - admin_network
+networks:
+  admin_network:
+

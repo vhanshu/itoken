@@ -1,0 +1,32 @@
+version: '3'
+services:
+  eureka-1:
+    restart: always
+    image: 192.168.244.130:5000/eureka
+    container_name: eureka-1
+    ports:
+      - 8761:8761
+    networks:
+      - eureka_1_network
+  eureka-2:
+    restart: always
+    image: 192.168.244.130:5000/eureka
+    container_name: eureka-2
+    ports:
+      - 8861:8761
+    networks:
+      - eureka_2_network
+
+  eureka-3:
+    restart: always
+    image: 192.168.244.130:5000/eureka
+    container_name: eureka-3
+    ports:
+      - 8961:8761
+    networks:
+      - eureka_3_network
+
+networks:
+  eureka_1_network:
+  eureka_2_network:
+  eureka_3_network:

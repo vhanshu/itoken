@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      uri: http://192.168.244.132:8777/
+      name: admin
+      label: master
+      profile: prod
+      discovery:
+        enabled: true
+        service-id: config
